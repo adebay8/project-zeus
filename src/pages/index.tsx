@@ -1,20 +1,11 @@
-import { Inter } from "next/font/google";
-import { Meta } from "@/components";
-import { HomeHero } from "@/sections";
-
-const inter = Inter({ subsets: ["latin"] });
+import { HomeHero, HomeProducts } from "@/sections";
+import DefaultLayout from "@/layouts/default";
 
 export default function Home() {
   return (
-    <div>
-      <Meta />
-      <header>
-        <nav></nav>
-      </header>
-      <main>
-        <HomeHero />
-      </main>
-      <footer></footer>
-    </div>
+    <DefaultLayout>
+      <HomeHero />
+      <HomeProducts />
+    </DefaultLayout>
   );
 }
