@@ -8,12 +8,14 @@ const HomeHero = () => {
     <section className={styles.hero} id="hero">
       <h1 className={styles.heading}>
         Building ideas that might
+        <br className={styles.linebreaker} />
         <span className={styles["highlighted-text"]}>
           &nbsp;
           <WavyLine />
           <span className={styles.text}>revolutionize</span>
           &nbsp;
         </span>
+        <br className={styles.linebreaker} />
         the world.
       </h1>
       <h2 className={styles.subheading}>
