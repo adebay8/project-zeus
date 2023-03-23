@@ -1,33 +1,55 @@
 import cx from "classnames";
+import Product from "./product";
 import styles from "./products.module.scss";
+import { Product as ProductType } from "./types";
 
-export default function Products() {
+const Products = () => {
+  const products = [
+    {
+      name: "Alloy",
+      description:
+        "Manage all your bank accounts in one place, and get insights️ on your spending",
+      link: "/#products",
+    },
+    {
+      name: "Wisharoo",
+      description: "Turn your dreams into reality, one wish at a time.",
+      link: "/#products",
+    },
+    {
+      name: "Moovium",
+      description:
+        "Manage all your delivery operations from one platform to enhance efficiency and deliver exceptional customer experience at scale.",
+      link: "https://moovium.ponnle.xyz",
+    },
+    {
+      name: "WanderWorld",
+      description:
+        "Your passport to a world of adventure and connection. Explore the world, connect with fellow travelers – all on one platform.",
+      link: "/#products",
+    },
+  ];
+
   const renderProducts = () => {
-    const products = [1, 2, 3, 4];
-    const splitProducts: number[][] = [];
+    const splitProducts: ProductType[][] = [];
 
     for (let i = 0; i < Math.ceil(products.length / 3); i++) {
       splitProducts.push(products.slice(i * 3, i * 3 + 3));
     }
 
-    return splitProducts.map((product, index) => {
-      return (
-        <div key={index} className={styles["products-grid"]}>
-          <article className={cx(styles["product"], styles.first)}></article>
-          {product[1] && (
-            <article
-              className={cx(styles["product"], styles.half, styles.second)}
-            ></article>
-          )}
-          {product[2] && (
-            <article
-              className={cx(styles["product"], styles.half, styles.third)}
-            ></article>
-          )}
-        </div>
-      );
-    });
+    return splitProducts.map(([first, second, third], index) => (
+      <div key={index} className={styles["products-grid"]}>
+        <Product className={cx(styles.first)} {...first} />
+        {second && (
+          <Product className={cx(styles.half, styles.second)} {...second} />
+        )}
+        {third && (
+          <Product className={cx(styles.half, styles.third)} {...third} />
+        )}
+      </div>
+    ));
   };
+
   return (
     <section id="products" className={styles.products}>
       <div className={styles.description}>
@@ -42,4 +64,6 @@ export default function Products() {
       {renderProducts()}
     </section>
   );
-}
+};
+
+export default Products;

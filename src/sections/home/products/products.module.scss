@@ -11,14 +11,15 @@
     color: rgba(209, 213, 219, 1);
 
     .heading {
-      //   line-height: 1.15 !important;
-      line-height: 1;
-      font-weight: 700;
+      line-height: 1.15;
       letter-spacing: 0;
+      font-size: 1.875rem;
+      font-weight: 700;
 
       @media (min-width: 520px) {
         font-size: 2.25rem;
         line-height: 2.5rem;
+        font-weight: 700;
       }
 
       @media (min-width: 768px) {
@@ -28,12 +29,14 @@
 
       @media (min-width: 1024px) {
         font-size: 3.5rem;
+        line-height: 1;
       }
     }
 
     .subheading {
       line-height: 1.375 !important;
       font-size: 1rem;
+      margin-top: 1.25rem;
 
       @media (min-width: 520px) {
         font-size: 1.125rem;
@@ -53,25 +56,28 @@
 
   .products-grid {
     display: grid;
-    grid-template-areas: "first first" "second third";
-    grid-template-columns: 1fr 1fr;
     grid-gap: 1.25rem;
     margin-bottom: 1.25rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "first" "second" "third";
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "first first" "second third";
+    }
   }
 
   .product {
-    background: rgba(37, 99, 235, 1);
+    color: #fff;
 
     &.first {
       grid-area: first;
       border-radius: 0.9375rem;
-
-      @media (min-width: 1024px) {
-        padding-top: 5rem;
-        padding-bottom: 8rem;
-        padding-left: 3.75rem;
-        padding-right: 3.75rem;
-      }
+      background: #0262d2;
+      padding-bottom: 12.5rem;
+      padding-top: 2.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
 
       @media (min-width: 520px) {
         padding-bottom: 20rem;
@@ -79,12 +85,18 @@
         padding-left: 2.5rem;
         padding-right: 2.5rem;
       }
+
+      @media (min-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 8rem;
+        padding-left: 3.75rem;
+        padding-right: 3.75rem;
+      }
     }
 
     &.half {
-      @media (min-width: 1024px) {
-        padding: 3.75rem;
-      }
+      padding: 2.5rem 1.5rem 12.5rem 1.5rem;
+      border-radius: 0.9375rem;
 
       @media (min-width: 520px) {
         padding: 2.5rem;
@@ -92,12 +104,103 @@
         border-radius: 0.9375rem;
       }
 
+      @media (min-width: 1024px) {
+        padding: 3.75rem;
+      }
+
       &.second {
         grid-area: second;
+        background: #ba119b; // #25EB4A #EBAD25 #EB25C6
       }
 
       &.third {
         grid-area: third;
+        background: #0d9527; //10ae2d
+      }
+    }
+
+    .title {
+      margin-top: 1.25rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.25 !important;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 500;
+
+      @media (min-width: 520px) {
+        font-size: 1.625rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 2.8125rem;
+      }
+    }
+
+    .description {
+      max-width: 370px;
+      line-height: 1.375 !important;
+      font-size: 0.9375rem;
+      margin: 0;
+
+      @media (min-width: 520px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+    }
+
+    .action-button {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.15s;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      color: rgba(0, 85, 186, 1);
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 0.625rem;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      display: inline-flex;
+      margin-top: 1.875rem;
+      text-decoration: inherit;
+
+      @media (min-width: 520px) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+        font-size: 0.9375rem;
+      }
+
+      .arrow {
+        transition-duration: 75ms;
+        transition-property: transform;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scaleX(1) scaleY(1);
+        width: 1.25rem;
+        margin-left: 0.3125rem;
       }
     }
   }
