@@ -24,7 +24,7 @@ const HomeHero = () => {
       </h2>
       <div className={styles.actions}>
         <Link href="/#" className={styles.link} target="_blank">
-          Join waitlist
+          Find out more
         </Link>
       </div>
       <Showcase />

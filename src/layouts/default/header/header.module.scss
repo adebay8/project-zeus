@@ -1,0 +1,132 @@
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  // max-width: 75rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .logo-link {
+    height: 1rem;
+    z-index: 10000;
+    color: inherit;
+    text-decoration: inherit;
+
+    @media (min-width: 520px) {
+      height: 1.25rem;
+    }
+
+    img {
+      height: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-style: solid;
+    }
+  }
+
+  .nav-list {
+    align-items: center;
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 1024px) {
+      display: flex;
+    }
+
+    li {
+      button {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        line-height: 1.5;
+        background: none;
+        border: none;
+        border-bottom: none;
+        color: #2c1338;
+        cursor: pointer;
+        padding: 0;
+        text-transform: none;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+
+        @media (min-width: 800px) {
+          color: white;
+        }
+      }
+
+      .dropdown {
+        display: none;
+
+        @media (min-width: 800px) {
+          display: inherit;
+        }
+
+        &-icon {
+          margin-left: 10px;
+          width: 0;
+          height: 0;
+          border-color: white;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid;
+        }
+      }
+    }
+  }
+
+  .action-button {
+    @media (min-width: 1024px) {
+      display: block;
+    }
+    display: none;
+
+    .action-link {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.15s;
+      font-weight: 500;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+      color: rgba(255, 255, 255, 1);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 1rem 2rem;
+      background-color: rgba(37, 99, 235, 1);
+      cursor: pointer;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      display: inline-flex;
+      margin-right: 0.9375rem;
+      box-sizing: border-box;
+      text-decoration: inherit;
+    }
+  }
+}

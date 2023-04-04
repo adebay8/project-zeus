@@ -8,6 +8,7 @@
 
   @media (max-width: 540px) {
     grid-template-columns: repeat(3, 1fr);
+    height: 300px;
   }
 
   .image-container {
