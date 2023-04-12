@@ -23,14 +23,9 @@
   }
 
   .logo-link {
-    height: 1rem;
     z-index: 10000;
     color: inherit;
     text-decoration: inherit;
-
-    @media (min-width: 520px) {
-      height: 1.25rem;
-    }
 
     img {
       height: 100%;

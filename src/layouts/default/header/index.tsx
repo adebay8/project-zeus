@@ -9,8 +9,8 @@ const Header = () => {
         <div className={styles["nav-left"]}>
           <Link className={styles["logo-link"]} href="/">
             <Image
-              src="https://monoassets.com/f/118499/x/8594c87134/footer-logo.svg"
-              alt="Mono Logo"
+              src="https://res.cloudinary.com/adebay8/image/upload/v1681319066/bluenova-logo-preview_bwwnfa.png"
+              alt="BlueNova Logo"
               width={133.33}
               height={20}
             />
